@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,16 +21,21 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-x98a=g*p#xvynkyr#esao)pd_0!_mb!#=q8va*@&8v#2gv@7b@'
+SECRET_KEY = 'django-insecure-uat5_t%fu2m-c%+*5_d!j6l#!s(pq3=2#go7loxtpjkt01ms!u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+
 import django_heroku
 import dj_database_url
-
-# Application definition
+django_heroku.settings(
+    locals(),
+    databases=False, 
+    staticfiles=False,  
+    test_runner=False,
+)
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -38,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'studio'
+    'studio',
 ]
 
 MIDDLEWARE = [
@@ -49,8 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
-
 ROOT_URLCONF = 'omycstudios.urls'
 
 TEMPLATES = [
@@ -118,18 +124,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 MEDIA_URL = '/media/'
+# Define the STATIC_ROOT setting
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
-
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-django_heroku.settings(locals())
