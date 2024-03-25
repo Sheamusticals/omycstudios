@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+{% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Omyc Studios</title>
+ 
+    <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/select2/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/owlcarousel/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/lightcase/lightcase.css' %}">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400|Work+Sans:300,400,700" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+
+</head>
+<body data-spy="scroll" data-target="#navbar" class="static-layout">
+	<nav id="header-navbar" class="navbar navbar-expand-lg py-4">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center text-white" href="/">
+         
+            <h2 class="font-weight-bolder mb-0">OMYC STUDIOS</h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-nav-header" aria-controls="navbar-nav-header" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="lnr lnr-menu"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-nav-header">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollto" href="#intro">Intro</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollto" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about'%}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tutorial'%}">Tutorials</a>
+                </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{%url 'blog'%}">Blog</a>
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link scrollto" href="{% url 'contact' %}">Contact Us</a>
+                </li>
+
+              
+               
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="side-nav" class="sidenav">
+	
+	
+	
+</div>	<div class="jumbotron d-flex align-items-center">
+  <div class="container text-center">
+    <h1 class="display-1 mb-4"><img src="{% static 'img/my logo.jpg' %}" alt=""width="500px"></h1>
+  </div>
+  <div class="rectangle-1"></div>
+  <div class="rectangle-2"></div>
+  <div class="rectangle-transparent-1"></div>
+  <div class="rectangle-transparent-2"></div>
+  <div class="circle-1"></div>
+  <div class="circle-2"></div>
+  <div class="circle-3"></div>
+  <div class="triangle triangle-1">
+  	<img src="{% static 'img/obj_triangle.png' %}" alt="">
+  </div>
+  <div class="triangle triangle-2">
+  	<img src="{% static 'img/obj_triangle.png' %}" alt="">
+  </div>
+  <div class="triangle triangle-3">
+  	<img src="{% static 'img/obj_triangle.png' %}" alt="">
+  </div>
+  <div class="triangle triangle-4">
+  	<img src="{% static 'img/obj_triangle.png' %}" alt="">
+  </div>
+</div>	
+<section id="intro" class="bg-white">
+    <div class="container">
+        <div class="section-content">
+
+            <div class="title-wrap mb-5" data-aos="fade-up">
+                <h2 class="section-title">
+                    Live your imagination 
+                </h2>
+                <p class="section-sub-title">Welcome to <strong>OMYC STUDIOS!</strong>
+                    <br>
+                    We specialize in graphic design, video editing, website development, and all things graphics-related.
+                    <br>
+                    Let us bring your vision to life with our expertise and creativity. Explore our services and <br>elevate your brand today!</p>
+            </div>
+      
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="{% static 'videos/video.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <style>.video-container {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+                padding-top: 56.25%; }
+            
+            .video-container video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover; 
+            }
+            </style>
+              
+        </div>
+    </div>
+</section>
+
+
+</section>	
+<section id="services" class="section-padding bg-fixed bg-white overlay">
+    <div class="container">
+        <div class="section-content" data-aos="fade-up">
+            <div class="heading-section text-center">
+                <h1>
+                    Our Services
+                </h1>
+            </div>
+            
+
+
+
+            <section id="blog">
+                <div class="container">
+                    <div class="section-content">
+                       
+                        <div class="row">
+              
+                            <div class="col-md-12 blog-holder">
+                                <div class="row">
+                                 
+                                    {% for type in types %}
+                                  
+                                    <div class="col-md-4 blog-item-wrapper" data-aos="fade-up">
+                                       
+                                        <div class="blog-item">
+                                           
+                                            <div class="blog-img">
+                                             
+                                              <img src="{{type.imageURL}}" alt="">
+                                             
+                                    
+                                            </div>
+                                            <div class="blog-text">
+                                                
+                                                <div class="blog-title">
+                                                  <h4>{{type.name}}</h4>
+                                                  <p>{{type.description}}</p>
+                                                </div>
+                                              
+                                              
+                                               
+                                            </div>
+                                       
+                                        </div>
+                                       
+                                    </div>
+                                 
+                                    {% endfor %} 
+                  
+                                </div>
+                            </div>
+                 
+                        </div>
+                    </div>
+                </div>
+            </section>
+      
+           
+               
+                        
+                        
+                    </div>
+                 
+                    
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</section>
+<section id="features" class="bg-white">
+    <div class="container">
+        <div class="section-content">
+
+            <div class="title-wrap mb-5" data-aos="fade-up">
+                <h2 class="section-title">
+               Why Choose Us?
+                </h2>
+
+            </div>
+     
+            <div class="row">
+     
+                <div class="col-md-10 offset-md-1 features-holder">
+                    <div class="row">
+
+                        <div class="col-md-4 col-sm-12 text-center mt-4">
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-cog fs-40"></i>
+                                </div>
+                                <h4>Creative Solutions</h4>
+                               
+                            </div>
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-frame-contract fs-40"></i>
+                                </div>
+                                <h4>Pixel Perfect</h4>
+                               
+                            </div>
+                        </div>
+                
+                        <div class="col-md-4 col-sm-12 text-center">
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-bubble fs-40"></i>
+                                </div>
+                                <h4>Quick Feedback</h4>
+                              
+                            </div>
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-magic-wand fs-40"></i>
+                                </div>
+                                <h4>Clean Design</h4>
+                           
+                            </div>
+                        </div>
+                       
+                        <div class="col-md-4 col-sm-12 text-center mt-4">
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-clock fs-40"></i>
+                                </div>
+                                <h4>Ontime Project</h4>
+                        
+                            </div>
+                            <div class="shadow rounded feature-item p-4 mb-4" data-aos="fade-up">
+                                <div class="my-4">
+                                    <i class="lnr lnr-thumbs-up fs-40"></i>
+                                </div>
+        
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+      
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="bg-white">
+    <div class="container">
+        <div class="section-content">
+            <!-- Section Title -->
+            <div class="title-wrap">
+                <h2 class="section-title">Our <b>Awesome</b> Works</h2>
+
+            </div>
+            <div class="video-container">
+                <video autoplay muted loop>
+                    <source src="{% static 'videos/video2.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <!-- End of Section Title -->
+            <div class="row">
+                <!-- Portfolio Holder -->
+                <div class="col-md-12 portfolio-holder mt-3">
+                    <!-- Btn Filter -->
+                    
+                    <div class="grid-portfolio">
+                        <div class="grid-sizer"></div>
+                        <div class="gutter-sizer"></div>
+                        {% for service in services %}
+                        
+                        <div class="grid-item {{ service.name }}" data-aos="fade-up">
+                            <div class="grid-item-wrapper">
+                                {% if service.image %}
+                             
+                                <img src="{{ service.imageURL }}" alt="portfolio-img" class="portfolio-item">
+                                {% endif %}
+                                <div class="grid-info">
+                                    <div class="grid-link d-flex justify-content-center">
+                                       
+                                        <a class="img-pop" data-rel="lightcase" href="{{ service.imageURL }}" title="{{ service.name }}">
+                                            <span class="lnr lnr-move"></span>
+                                        </a>
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End of Portfolio Item -->
+                        {% endfor %}
+                    </div>
+                    <div class="video-container">
+                        <video autoplay muted loop>
+                            <source src="{% static 'videos/video3.mp4' %}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+<style>.grid-portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: flex-start;
+}
+
+.grid-item {
+    flex: 0 0 calc(33.3333% - 20px);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.grid-item .grid-item-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.grid-item .portfolio-item {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover; 
+    display: block;
+}
+
+</style>                    
+        </div>
+    </div>
+</section>
+
+<section id="client" class="overlay bg-fixed">
+    <div class="container">
+        <div class="section-content" data-aos="fade-up">
+            <div class="row ">
+                <div class="col-md-12">
+            
+                    <div class="title-wrap mb-5">
+                        <h2>Brands we've worked with</h2>
+                    </div>
+              
+                </div>
+
+                <div class="col-md-12 client-holder">
+                    <div class="client-slider owl-carousel">
+                        {% for brand in brands %}
+                        <div class="client-item">
+                     
+                            <img class="img-responsive" src="{{brand.imageURL}}" alt="{{brand.name}}">
+               
+                        </div>
+                        {%endfor%}
+                    </div>
+                    </div>
+                    <style>.client-slider .client-item img {
+                        max-width: 100%;
+                        height: auto;
+                    }
+                    </style>
+            </div>
+ </div>
+    </div>
+</section>
+</div>
+<footer class="mastfoot my-3">
+    <div class="inner container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12 d-flex align-items-center">
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <nav class="nav nav-mastfoot justify-content-center">
+                    <p style="padding-top: 10px;">Connect with us:</p>
+                    <a class="nav-link" href="https://wa.me/+233547039326">
+                        <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+                    </a>
+                    <a class="nav-link" href="https://www.facebook.com/profile.php?id=61554059577688">
+                        <i class="fab fa-facebook-f" style="font-size: 24px;"></i>
+                    </a>
+                    <a class="nav-link" href="https://www.instagram.com/omyc5?igsh=eGduZGRhank3d3Fl">
+                        <i class="fab fa-instagram" style="font-size: 24px;"></i>
+                    </a>
+                    <a class="nav-link" href="https://www.youtube.com/channel/UCS5bJXDKxz8JKL68XyELJLg">
+                        <i class="fab fa-youtube" style="font-size: 24px;"></i>
+                    </a>
+                </a>
+
+             
+                <a class="nav-link" href="https://wa.me/+233506632349">
+                     Made with &#x1F496;
+                     by &copy;<strong>SM_Jay</strong><i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+                </a>
+                </nav>
+               
+                   
+                   
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+        </div>
+    </div>
+</footer>	
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+	<script src="{% static 'vendor/bootstrap/popper.min.js' %}"></script>
+	<script src="{% static 'vendor/bootstrap/bootstrap.min.js' %}"></script>
+	<script src="{% static 'vendor/select2/select2.min.js ' %}"></script>
+	<script src="{% static 'vendor/owlcarousel/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'vendor/stellar/jquery.stellar.js' %}" type="text/javascript" charset="utf-8"></script>
+	<script src="{% static 'vendor/isotope/isotope.min.js' %}"></script>
+	<script src="{% static 'vendor/lightcase/lightcase.js' %}"></script>
+	<script src="{% static 'vendor/waypoints/waypoint.min.js' %}"></script>
+	 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script src="{% static 'js/app.min.js ' %}"></script>
+      <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+	 
+</body>
+</html>
